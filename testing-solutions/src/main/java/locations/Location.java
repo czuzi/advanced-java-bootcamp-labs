@@ -35,4 +35,12 @@ public class Location {
 	public void setLongitude(double longitude) {
 		this.longitude = longitude;
 	}
+
+	public boolean isOnEquator() {
+		return latitude == 0;
+	}
+
+	public boolean isOnPrimeMeridian() {
+		return longitude == 0;
+	}
 }

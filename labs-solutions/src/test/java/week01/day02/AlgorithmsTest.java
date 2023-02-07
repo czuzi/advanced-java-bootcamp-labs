@@ -10,7 +10,7 @@ class AlgorithmsTest {
 
 	@Test
 	void findDuplicationTest() {
-		assertEquals(3, new Algorithms().findDuplication(List.of(1,2,3,3,4,5,6)));
+		assertEquals(1, new Algorithms().findDuplication(List.of(1,2,3,1,4,5,6)));
 	}
 
 	@Test
