@@ -1,10 +1,12 @@
 package locations;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@DisplayName("Tests for Location class")
 class LocationTest {
 
 	LocationParser locationParser;
