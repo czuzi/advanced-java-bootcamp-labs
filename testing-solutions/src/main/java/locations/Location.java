@@ -7,9 +7,16 @@ public class Location {
 	private double longitude;
 
 	public Location(String name, double latitude, double longitude) {
+		validate(latitude, longitude);
 		this.name = name;
 		this.latitude = latitude;
 		this.longitude = longitude;
+	}
+
+	private void validate(double latitude, double longitude) {
+		if (latitude < -90 || latitude > 90 || longitude < -180 || longitude > 180) {
+			throw new IllegalArgumentException("Invalid parameters");
+		}
 	}
 
 	public String getName() {

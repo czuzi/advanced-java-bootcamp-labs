@@ -47,4 +47,11 @@ class LocationTest {
 		Location budapest2 = locationParser.parse("Budapest,47.497912,19.040235");
 		assertEquals(0.0, budapest.distanceFrom(budapest2));
 	}
+
+	@Test
+	void testException() {
+		IllegalArgumentException iae = assertThrows(IllegalArgumentException.class,
+				() -> new Location("InvalidLocation", -91.21331, 35.312));
+		assertEquals("Invalid parameters", iae.getMessage());
+	}
 }
