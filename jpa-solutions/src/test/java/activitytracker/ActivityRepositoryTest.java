@@ -3,8 +3,8 @@ package activitytracker;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import jakarta.persistence.*;
+
 
 import java.time.LocalDateTime;
 
