@@ -1,3 +1,44 @@
+# Második hét (2023-02-13 - 2023-02-19)
+
+## Adatbázis programozás Java nyelven, JPA - Alapok
+
+### JPA Első rész
+
+- [x] [Egyszerű mentés JPA-val videó](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/257x0918-egyszeru-mentes-jpa-val)
+- [x] [Egyszerű mentés JPA-val-gyakorlat](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/257x0939-egyszeru-mentes-jpa-val-gyakorlat)
+- [x] Egyszerű mentés JPA-val gyakorlati feladat
+- [x] [További egyszerű műveletek JPA-val](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/257x0948-tovabbi-egyszeru-muveletek-jpa-val)
+- [x] [További egyszerű műveletek JPA-val - gyakorlat](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/257x0964-tovabbi-egyszeru-muveletek-jpa-val-gyakorlat)
+- [x] További egyszerű műveletek JPA-val gyakorlati feladat
+- [x] [Architektúra és integrációs tesztelés](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/107x9290-architektura-es-integracios-teszteles)
+- [x] Architektúra és integrációs tesztelés gyakorlati feladat
+- [x] [Entitások konfigurálása](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/107x9291-entitasok-konfiguralasa)
+- [x] Entitások konfigurálása gyakorlati feladat
+- [x] [Elsődleges kulcs](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/10769292-elsodleges-kulcs)
+- [x] Elsődleges kulcs gyakorlati feladat
+- [x] [Entitások életciklusa](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/10769293-entitasok-eletciklusa)
+- [ ] Entitások életciklusa gyakorlati feladat
+- [x] [Többértékű attribútumok](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/10769294-tobberteku-attributumok)
+- [ ] Többértékű attribútumok gyakorlati feladat
+
+### Konzultációk
+
+- [x] 2023-02-13 konzultáció részvétel/videó
+- [x] 2023-02-14 konzultáció részvétel/videó
+- [x] 2023-02-15 konzultáció részvétel/videó
+- [x] 2023-02-16 konzultáció részvétel/videó
+- [x] 2023-02-17 konzultáció részvétel/videó
+
+- [x] 2023-02-13 konzultáció gyakorlati feladat (ha van)
+- [x] 2023-02-14 konzultáció gyakorlati feladat (ha van)
+- [x] 2023-02-15 konzultáció gyakorlati feladat (ha van)
+- [x] 2023-02-16 konzultáció gyakorlati feladat (ha van)
+- [x] 2023-02-17 konzultáció gyakorlati feladat (ha van)
+
+Azt, hogy egy konzultáción adtunk-e ki gyakorlati feladatot, itt tudod ellenőrizni:
+
+[Konzultációkon kiadott gyakorlati feladatok](https://github.com/Strukturavaltas3-Halado-Java/java-strukturavalto3-halado/blob/main/labs.md)
+
 # Első hét (2023-01-06 - 2023-01-12)
 
 ## Szoftvertesztelés Java platformon

@@ -9,7 +9,11 @@ import java.time.LocalDateTime;
 public class Activity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @TableGenerator(name = "act_gen",
+        table = "act_id_gen",
+        pkColumnName = "id_gen",
+        valueColumnName = "id_value")
+    @GeneratedValue(generator = "act_gen")
     private Long id;
 
     @Column(name = "start_time", nullable = false)
@@ -21,6 +25,12 @@ public class Activity {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 20)
     private ActivityType type;
+
+    @Column(name = "created_at")
+    private LocalDateTime createdAt;
+
+    @Column(name = "updated_at")
+    private LocalDateTime updatedAt;
 
     public Activity() {
     }
