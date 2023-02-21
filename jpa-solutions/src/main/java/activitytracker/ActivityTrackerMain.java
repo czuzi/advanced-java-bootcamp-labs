@@ -23,7 +23,7 @@ public class ActivityTrackerMain {
             main.saveActivity(secondActivity, em);
             main.saveActivity(thirdActivity, em);
 
-            List<Activity> activities = main.listActivites(em);
+            List<Activity> activities = main.listActivities(em);
             System.out.println(activities);
 
             Activity activity = main.findActivityById(1L, em);
@@ -33,7 +33,7 @@ public class ActivityTrackerMain {
             em.remove(activity);
             em.getTransaction().commit();
 
-            System.out.println(main.listActivites(em));
+            System.out.println(main.listActivities(em));
         } finally {
             em.close();
         }
@@ -45,7 +45,7 @@ public class ActivityTrackerMain {
         em.getTransaction().commit();
     }
 
-    private List<Activity> listActivites(EntityManager em) {
+    private List<Activity> listActivities(EntityManager em) {
         return em.createQuery("select a from Activity a", Activity.class).getResultList();
     }
 

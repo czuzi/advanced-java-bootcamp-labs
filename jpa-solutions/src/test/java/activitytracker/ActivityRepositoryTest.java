@@ -33,4 +33,18 @@ class ActivityRepositoryTest {
         assertEquals("morning running", result.getDescription());
         assertEquals(ActivityType.RUNNING, result.getType());
     }
+
+    @Test
+    void testUpdateTime() {
+        Activity activity = new Activity(LocalDateTime.of(2022, 4, 11, 6, 0), "morning running", ActivityType.RUNNING);
+        repository.saveActivity(activity);
+        long id = activity.getId();
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException ie) {
+            throw new IllegalStateException();
+        }
+        repository.updateActivity(id, "afternoon running");
+        System.out.println(repository.findActivityById(id));
+    }
 }

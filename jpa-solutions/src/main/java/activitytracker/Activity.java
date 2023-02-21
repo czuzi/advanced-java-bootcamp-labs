@@ -76,6 +76,16 @@ public class Activity {
         this.type = type;
     }
 
+    @PrePersist
+    public void setCreatedAt() {
+        this.createdAt = LocalDateTime.now();
+    }
+
+    @PreUpdate
+    public void setUpdatedAt() {
+        this.updatedAt = LocalDateTime.now();
+    }
+
     @Override
     public String toString() {
         return "Activity{" +
@@ -83,6 +93,8 @@ public class Activity {
                 ", startTime=" + startTime +
                 ", description='" + description + '\'' +
                 ", type=" + type +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
                 '}';
     }
 }

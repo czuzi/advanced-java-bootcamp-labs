@@ -53,4 +53,16 @@ public class ActivityRepository {
             em.close();
         }
     }
+
+    public void updateActivity(long id, String description) {
+        EntityManager em = factory.createEntityManager();
+        try {
+            em.getTransaction().begin();
+            Activity activity = em.find(Activity.class, id);
+            activity.setDescription(description);
+            em.getTransaction().commit();
+        } finally {
+            em.close();
+        }
+    }
 }
