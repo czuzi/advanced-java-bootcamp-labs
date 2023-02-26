@@ -24,7 +24,7 @@ public class Trainer {
     private String name;
     @Getter @Setter
     private Status status;
-    @OneToMany
+    @OneToMany(mappedBy = "trainer", cascade = {CascadeType.PERSIST, CascadeType.REMOVE}, orphanRemoval = true)
     private List<Training> trainings;
 
     public Trainer(String name, Status status) {
@@ -38,5 +38,6 @@ public class Trainer {
 
     public void addTraining(Training training) {
         trainings.add(training);
+        training.setTrainer(this);
     }
 }
