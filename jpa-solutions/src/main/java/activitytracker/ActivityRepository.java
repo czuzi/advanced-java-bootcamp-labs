@@ -65,4 +65,26 @@ public class ActivityRepository {
             em.close();
         }
     }
+
+    public Activity findActivityByIdWithLabels(long id) {
+        EntityManager em = factory.createEntityManager();
+        try {
+            return em.createQuery("select distinct a from Activity a left join fetch a.labels where a.id = :id", Activity.class)
+                    .setParameter("id", id)
+                    .getSingleResult();
+        } finally {
+            em.close();
+        }
+    }
+
+    public Activity findActivityByIdWithTrackPoints(long id) {
+        EntityManager em = factory.createEntityManager();
+        try {
+            return em.createQuery("select distinct a from Activity a left join fetch a.trackPoints where a.id = :id", Activity.class)
+                    .setParameter("id", id)
+                    .getSingleResult();
+        } finally {
+            em.close();
+        }
+    }
 }

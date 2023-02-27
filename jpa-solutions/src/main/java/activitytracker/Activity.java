@@ -3,6 +3,8 @@ package activitytracker;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "activities")
@@ -32,6 +34,13 @@ public class Activity {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
+    @ElementCollection
+    private List<String> labels = new ArrayList<>();
+
+    @OneToMany(mappedBy = "activity", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    @OrderBy("time")
+    private List<TrackPoint> trackPoints = new ArrayList<>();
+
     public Activity() {
     }
 
@@ -46,6 +55,19 @@ public class Activity {
         this.startTime = startTime;
         this.description = description;
         this.type = type;
+    }
+
+    public void addTrackPoint(TrackPoint trackPoint) {
+        trackPoints.add(trackPoint);
+        trackPoint.setActivity(this);
+    }
+
+    public List<TrackPoint> getTrackPoints() {
+        return trackPoints;
+    }
+
+    public void setTrackPoints(List<TrackPoint> trackPoints) {
+        this.trackPoints = trackPoints;
     }
 
     public Long getId() {
@@ -74,6 +96,18 @@ public class Activity {
 
     public void setType(ActivityType type) {
         this.type = type;
+    }
+
+    public List<String> getLabels() {
+        return labels;
+    }
+
+    public void addLabel(String label) {
+        labels.add(label);
+    }
+
+    public void setLabels(List<String> labels) {
+        this.labels = labels;
     }
 
     @PrePersist
