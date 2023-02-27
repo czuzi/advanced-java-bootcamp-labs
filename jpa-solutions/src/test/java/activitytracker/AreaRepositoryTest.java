@@ -6,6 +6,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
+import java.util.Set;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class AreaRepositoryTest {
 
@@ -31,5 +34,17 @@ class AreaRepositoryTest {
         area.addActivity(otherActivity);
         areaRepository.saveArea(area);
         System.out.println(area.getActivities());
+    }
+
+    @Test
+    public void testSaveThenFind() {
+        Area area = new Area("Kiskunság");
+        area.addCityToMap(new City("Kecskemét", 110_687));
+        area.addCityToMap(new City("Soltvadkert", 7342));
+        areaRepository.saveArea(area);
+        Area expected = areaRepository.findAreaByIdWithCities(area.getId());
+
+        assertEquals(2, expected.getCityMap().size());
+        assertEquals(Set.of("Kecskemét", "Soltvadkert"), expected.getCityMap().keySet());
     }
 }

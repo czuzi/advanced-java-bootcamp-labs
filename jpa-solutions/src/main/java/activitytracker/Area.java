@@ -3,7 +3,9 @@ package activitytracker;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Entity
 @Table(name = "areas")
@@ -16,6 +18,10 @@ public class Area {
 
     @ManyToMany(mappedBy = "areas")
     private List<Activity> activities = new ArrayList<>();
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "area")
+    @MapKey(name = "name")
+    private Map<String, City> cityMap = new HashMap<>();
 
     public Area() {
     }
@@ -51,5 +57,18 @@ public class Area {
     public void addActivity(Activity activity) {
         activities.add(activity);
         activity.getAreas().add(this);
+    }
+
+    public void addCityToMap(City city) {
+        cityMap.put(city.getName(), city);
+        city.setArea(this);
+    }
+
+    public Map<String, City> getCityMap() {
+        return cityMap;
+    }
+
+    public void setCityMap(Map<String, City> cityMap) {
+        this.cityMap = cityMap;
     }
 }

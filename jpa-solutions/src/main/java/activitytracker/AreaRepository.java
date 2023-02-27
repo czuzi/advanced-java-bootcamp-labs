@@ -33,4 +33,15 @@ public class AreaRepository {
             em.close();
         }
     }
+
+    public Area findAreaByIdWithCities(long id) {
+        EntityManager em = factory.createEntityManager();
+        try {
+            return em.createQuery("select distinct area from Area area left join fetch area.cityMap where area.id = :id", Area.class)
+                    .setParameter("id", id)
+                    .getSingleResult();
+        } finally {
+            em.close();
+        }
+    }
 }
