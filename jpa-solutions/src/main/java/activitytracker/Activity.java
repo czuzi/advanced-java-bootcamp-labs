@@ -41,6 +41,9 @@ public class Activity {
     @OrderBy("time")
     private List<TrackPoint> trackPoints = new ArrayList<>();
 
+    @ManyToMany(cascade = CascadeType.PERSIST)
+    private List<Area> areas = new ArrayList<>();
+
     public Activity() {
     }
 
@@ -55,6 +58,19 @@ public class Activity {
         this.startTime = startTime;
         this.description = description;
         this.type = type;
+    }
+
+    public void addArea(Area area) {
+        areas.add(area);
+        area.getActivities().add(this);
+    }
+
+    public List<Area> getAreas() {
+        return areas;
+    }
+
+    public void setAreas(List<Area> areas) {
+        this.areas = areas;
     }
 
     public void addTrackPoint(TrackPoint trackPoint) {

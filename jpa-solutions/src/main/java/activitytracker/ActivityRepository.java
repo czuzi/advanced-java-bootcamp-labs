@@ -13,12 +13,13 @@ public class ActivityRepository {
         this.factory = factory;
     }
 
-    public void saveActivity(Activity activity) {
+    public Activity saveActivity(Activity activity) {
         EntityManager em = factory.createEntityManager();
         try {
             em.getTransaction().begin();
             em.persist(activity);
             em.getTransaction().commit();
+            return activity;
         } finally {
             em.close();
         }
@@ -81,6 +82,17 @@ public class ActivityRepository {
         EntityManager em = factory.createEntityManager();
         try {
             return em.createQuery("select distinct a from Activity a left join fetch a.trackPoints where a.id = :id", Activity.class)
+                    .setParameter("id", id)
+                    .getSingleResult();
+        } finally {
+            em.close();
+        }
+    }
+
+    public Activity findActivityByIdWithAreas(Long id) {
+        EntityManager em = factory.createEntityManager();
+        try {
+            return em.createQuery("select distinct a from Activity a left join fetch a.areas where a.id = :id", Activity.class)
                     .setParameter("id", id)
                     .getSingleResult();
         } finally {
