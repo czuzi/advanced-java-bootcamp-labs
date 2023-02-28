@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "trackpoints")
+@NamedQuery(name = "findTrackPointCoordinatesByDate", query = "select new activitytracker.Coordinate(t.latitude, t.longitude) from TrackPoint t where t.activity.startTime > :time order by t.time")
 public class TrackPoint {
 
     @Id

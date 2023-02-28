@@ -3,6 +3,7 @@ package activitytracker;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class ActivityRepository {
@@ -97,6 +98,34 @@ public class ActivityRepository {
                     .getSingleResult();
         } finally {
             em.close();
+        }
+    }
+
+    public List<Coordinate> findTrackPointCoordinatesByDate(LocalDateTime afterThis, int start, int max) {
+        EntityManager manager = factory.createEntityManager();
+        try {
+            List<Coordinate> coordinates = manager
+                    .createNamedQuery("findTrackPointCoordinatesByDate")
+                    .setParameter("time", afterThis)
+                    .setFirstResult(start)
+                    .setMaxResults(max)
+                    .getResultList();
+            return coordinates;
+        } finally {
+            manager.close();
+        }
+    }
+
+    public List<Object[]> findTrackPointCountByActivity() {
+        EntityManager manager = factory.createEntityManager();
+        try {
+            List<Object[]> trackPointsCount = manager
+                    .createQuery("select description, size(a.trackPoints) from Activity a order by a.description",
+                            Object[].class)
+                    .getResultList();
+            return trackPointsCount;
+        } finally {
+            manager.close();
         }
     }
 }

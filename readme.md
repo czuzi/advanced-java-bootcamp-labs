@@ -1,3 +1,39 @@
+# Harmadik hét (2023-02-20 - 2023-02-26)
+
+## Adatbázis programozás Java nyelven, JPA - Kapcsolatok
+
+### JPA Második rész
+
+- [x] [Kapcsolatok videó](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/10769295-kapcsolatok)
+- [x] Kapcsolatok gyakorlati feladat
+- [x] [Több-több kapcsolat videó](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/10769296-tobb-tobb-kapcsolat)
+- [x] Több-több kapcsolat gyakorlati feladat
+- [x] [Entitások Mapekben videó](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/10769297-entitasok-mapekben)
+- [x] Entitások Mapekben gyakorlati feladat
+- [x] [Lekérdezések videó](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/10769300-lekerdezesek)
+- [x] Lekérdezések gyakorlati feladat
+- [x] [Haladó lekérdezések videó](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/10769301-halado-lekerdezesek)
+- [x] Haladó lekérdezések gyakorlati feladat
+- [x] [Deklaratív tranzakciókezelés videó](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/10769307-deklarativ-tranzakciokezeles)
+
+### Konzultációk
+
+- [x] 2023-02-20 konzultáció részvétel/videó
+- [x] 2023-02-21 konzultáció részvétel/videó
+- [x] 2023-02-22 konzultáció részvétel/videó
+- [x] 2023-02-23 konzultáció részvétel/videó
+- [x] 2023-02-24 konzultáció részvétel/videó
+
+- [x] 2023-02-20 konzultáció gyakorlati feladat (ha van)
+- [x] 2023-02-21 konzultáció gyakorlati feladat (ha van)
+- [x] 2023-02-22 konzultáció gyakorlati feladat (ha van)
+- [x] 2023-02-23 konzultáció gyakorlati feladat (ha van)
+- [x] 2023-02-24 konzultáció gyakorlati feladat (ha van)
+
+Azt, hogy egy konzultáción adtunk-e ki gyakorlati feladatot, itt tudod ellenőrizni:
+
+[Konzultációkon kiadott gyakorlati feladatok](https://github.com/Strukturavaltas3-Halado-Java/java-strukturavalto3-halado/blob/main/labs.md)
+
 # Második hét (2023-02-13 - 2023-02-19)
 
 ## Adatbázis programozás Java nyelven, JPA - Alapok
@@ -17,7 +53,7 @@
 - [x] [Elsődleges kulcs](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/10769292-elsodleges-kulcs)
 - [x] Elsődleges kulcs gyakorlati feladat
 - [x] [Entitások életciklusa](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/10769293-entitasok-eletciklusa)
-- [ ] Entitások életciklusa gyakorlati feladat
+- [x] Entitások életciklusa gyakorlati feladat
 - [x] [Többértékű attribútumok](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/10769294-tobberteku-attributumok)
 - [ ] Többértékű attribútumok gyakorlati feladat
 
