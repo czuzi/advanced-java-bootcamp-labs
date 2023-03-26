@@ -1,5 +1,12 @@
 package training360.locations;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Location {
 
     private Long id;
@@ -11,30 +18,5 @@ public class Location {
         this.name = name;
         this.lat = lat;
         this.lon = lon;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public double getLat() {
-        return lat;
-    }
-
-    public double getLon() {
-        return lon;
-    }
-
-    @Override
-    public String toString() {
-        return "Location{" +
-                "name='" + name + '\'' +
-                ", lat=" + lat +
-                ", lon=" + lon +
-                '}';
     }
 }
