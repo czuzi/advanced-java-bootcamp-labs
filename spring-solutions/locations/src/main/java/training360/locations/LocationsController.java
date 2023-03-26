@@ -1,9 +1,6 @@
 package training360.locations;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -26,5 +23,10 @@ public class LocationsController {
             sb.append("<p>").append(l.toString()).append("</p>");
         }
         return sb.toString();
+    }
+
+    @GetMapping("/{id}")
+    public LocationDto findLocationById(@PathVariable("id") long id) {
+        return service.findLocationById(id);
     }
 }

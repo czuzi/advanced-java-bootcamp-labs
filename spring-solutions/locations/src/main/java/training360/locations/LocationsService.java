@@ -30,4 +30,13 @@ public class LocationsService {
                 .toList();
         return mapper.map(filtered, targetListType);
     }
+
+    public LocationDto findLocationById(long id) {
+        return mapper.map(locations.stream()
+                .filter(location -> location.getId() == id)
+                .findFirst()
+                .orElseThrow(IllegalArgumentException::new),
+                LocationDto.class);
+
+    }
 }
