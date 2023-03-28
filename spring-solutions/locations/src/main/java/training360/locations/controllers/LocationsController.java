@@ -1,6 +1,10 @@
-package training360.locations;
+package training360.locations.controllers;
 
 import org.springframework.web.bind.annotation.*;
+import training360.locations.dtos.UpdateLocationCommand;
+import training360.locations.services.LocationsService;
+import training360.locations.dtos.CreateLocationCommand;
+import training360.locations.dtos.LocationDto;
 
 import java.util.List;
 import java.util.Optional;
@@ -28,6 +32,11 @@ public class LocationsController {
     @PostMapping
     public LocationDto createLocation(@RequestBody CreateLocationCommand command) {
         return service.createLocation(command);
+    }
+
+    @PutMapping("/{id}")
+    public LocationDto updateLocationById(@PathVariable("id") Long id, @RequestBody UpdateLocationCommand command) {
+        return service.updateLocationById(id, command);
     }
 
 }

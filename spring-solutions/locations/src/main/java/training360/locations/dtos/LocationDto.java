@@ -1,4 +1,4 @@
-package training360.locations;
+package training360.locations.dtos;
 
 import lombok.Data;
 

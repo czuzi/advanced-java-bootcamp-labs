@@ -1,8 +1,12 @@
-package training360.locations;
+package training360.locations.services;
 
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.stereotype.Service;
+import training360.locations.dtos.CreateLocationCommand;
+import training360.locations.dtos.LocationDto;
+import training360.locations.dtos.UpdateLocationCommand;
+import training360.locations.model.Location;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -50,6 +54,17 @@ public class LocationsService {
                 command.getLon()
         );
         locations.add(location);
+        return mapper.map(location, LocationDto.class);
+    }
+
+    public LocationDto updateLocationById(Long id, UpdateLocationCommand command) {
+        Location location = locations.stream()
+                .filter(l -> l.getId() == id)
+                .findFirst()
+                .orElseThrow(IllegalArgumentException::new);
+        location.setName(command.getName());
+        location.setLat(command.getLat());
+        location.setLon(command.getLon());
         return mapper.map(location, LocationDto.class);
     }
 }

@@ -1,4 +1,4 @@
-package training360.locations;
+package training360.locations.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

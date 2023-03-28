@@ -2,7 +2,17 @@ POST http://localhost:8080/api/locations
 Content-Type: application/json
 
 {
-  "name": "Los Angeles",
+  "name": "Washington",
+  "lat": 13.121,
+  "lon": 12.231
+}
+
+###
+PUT http://localhost:8080/api/locations/4
+Content-Type: application/json
+
+{
+  "name": "New Orleans",
   "lat": 13.121,
   "lon": 12.231
 }
