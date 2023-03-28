@@ -39,4 +39,8 @@ public class LocationsController {
         return service.updateLocationById(id, command);
     }
 
+    @DeleteMapping("/{id}")
+    public void deleteLocationById(@PathVariable("id") Long id) {
+        service.deleteLocationById(id);
+    }
 }

@@ -67,4 +67,12 @@ public class LocationsService {
         location.setLon(command.getLon());
         return mapper.map(location, LocationDto.class);
     }
+
+    public void deleteLocationById(Long id) {
+        Location location = locations.stream()
+                .filter(l -> l.getId() == id)
+                .findFirst()
+                .orElseThrow(IllegalArgumentException::new);
+        locations.remove(location);
+    }
 }
