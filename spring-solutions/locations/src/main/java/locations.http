@@ -1,0 +1,14 @@
+POST http://localhost:8080/api/locations
+Content-Type: application/json
+
+{
+  "name": "Los Angeles",
+  "lat": 13.121,
+  "lon": 12.231
+}
+
+###
+GET http://localhost:8080/api/locations
+Accept: application/json
+
+###

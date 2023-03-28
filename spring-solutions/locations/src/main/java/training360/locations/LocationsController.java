@@ -16,17 +16,18 @@ public class LocationsController {
     }
 
     @GetMapping
-    public String getLocations(@RequestParam Optional<String> term) {
-        List<LocationDto> locations = service.getLocations(term);
-        StringBuilder sb = new StringBuilder();
-        for (LocationDto l: locations) {
-            sb.append("<p>").append(l.toString()).append("</p>");
-        }
-        return sb.toString();
+    public List<LocationDto> getLocations(@RequestParam Optional<String> term) {
+        return service.getLocations(term);
     }
 
     @GetMapping("/{id}")
     public LocationDto findLocationById(@PathVariable("id") long id) {
         return service.findLocationById(id);
     }
+
+    @PostMapping
+    public LocationDto createLocation(@RequestBody CreateLocationCommand command) {
+        return service.createLocation(command);
+    }
+
 }
