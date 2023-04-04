@@ -1,5 +1,7 @@
 package training360.locations.controllers;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import training360.locations.dtos.UpdateLocationCommand;
 import training360.locations.services.LocationsService;
@@ -25,11 +27,16 @@ public class LocationsController {
     }
 
     @GetMapping("/{id}")
-    public LocationDto findLocationById(@PathVariable("id") long id) {
-        return service.findLocationById(id);
+    public ResponseEntity<LocationDto> findLocationById(@PathVariable("id") long id) {
+        try {
+            return ResponseEntity.ok(service.findLocationById(id));
+        } catch (IllegalArgumentException iae) {
+            return ResponseEntity.notFound().build();
+        }
     }
 
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public LocationDto createLocation(@RequestBody CreateLocationCommand command) {
         return service.createLocation(command);
     }
@@ -40,6 +47,7 @@ public class LocationsController {
     }
 
     @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteLocationById(@PathVariable("id") Long id) {
         service.deleteLocationById(id);
     }
