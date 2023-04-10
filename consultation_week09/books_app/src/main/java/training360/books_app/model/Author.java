@@ -3,6 +3,8 @@ package training360.books_app.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @NoArgsConstructor(force = true)
 @RequiredArgsConstructor
 @AllArgsConstructor
@@ -16,4 +18,6 @@ public class Author {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private final String name;
+    @OneToMany(mappedBy = "author")
+    private List<Book> books;
 }

@@ -1,8 +1,17 @@
+POST http://localhost:8080/api/authors/3/books
+Content-Type: application/json
+
+{
+  "isbn": "123124",
+  "title": "corrections"
+}
+
+###
 POST http://localhost:8080/api/authors
 Content-Type: application/json
 
 {
-  "name": "Stephen King"
+  "name": "Jonathan Franzen"
 }
 
 ###
